@@ -1,0 +1,8 @@
+{
+  "mochaExplorer.files": [
+    "./leap-years-1/dist/test/**/*.ts"
+],
+  "mochaExplorer.require": ["mocha-suppress-logs"],
+  "mochaExplorer.nodeArgv": ["--loader=ts-node/esm"],
+  "mochaExplorer.ui": "bdd"
+}
