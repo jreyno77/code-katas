@@ -1,0 +1,20 @@
+{
+  "name": "code-katas",
+  "version": "1.0.0",
+  "description": "This is a project wrapper for all code kata projects.  This will be updated with submodules that each kata and it's version can be individually represented and stored in the overall monolithic project.",
+  "homepage": "https://github.com/jreyno77/code-katas#readme",
+  "bugs": {
+    "url": "https://github.com/jreyno77/code-katas/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jreyno77/code-katas.git"
+  },
+  "license": "ISC",
+  "author": "Joshua Reynolds",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  }
+}
