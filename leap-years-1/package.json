@@ -13,8 +13,21 @@
   "license": "ISC",
   "author": "Joshua Reynolds",
   "type": "module",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "npm test"
+    "build": "esbuild ./src/index.ts --bundle --platform=node --format=esm --outfile=./dist/src/index.ts",
+    "pretest": "rm -rf ./dist && esbuild ./src/index.ts --bundle --platform=node --format=esm --outfile=./dist/src/index.ts && esbuild ./test/**/*.ts --platform=node --format=esm --outdir=./dist/test --out-extension:.js=.ts",
+    "test": "mocha --node-option loader=ts-node/esm --require mocha-suppress-logs ./dist/test/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.2.0",
+    "esbuild": "^0.27.3",
+    "mocha": "^11.1.0",
+    "mocha-suppress-logs": "^0.5.1",
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
   }
 }
