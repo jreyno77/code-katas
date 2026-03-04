@@ -1,0 +1,33 @@
+{
+  "name": "leap-years-1",
+  "version": "1.0.0",
+  "description": "The first code kata leap years practice sub-module",
+  "homepage": "https://github.com/jreyno77/code-katas#readme",
+  "bugs": {
+    "url": "https://github.com/jreyno77/code-katas/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jreyno77/code-katas.git"
+  },
+  "license": "ISC",
+  "author": "Joshua Reynolds",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "build": "esbuild ./src/index.ts --bundle --platform=node --format=esm --outfile=./dist/src/index.ts",
+    "pretest": "rm -rf ./dist && esbuild ./src/index.ts --bundle --platform=node --format=esm --outfile=./dist/src/index.ts && esbuild ./test/**/*.ts --platform=node --format=esm --outdir=./dist/test --out-extension:.js=.ts",
+    "test": "mocha --node-option loader=ts-node/esm --require mocha-suppress-logs ./dist/test/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.2.0",
+    "esbuild": "^0.27.3",
+    "mocha": "^11.1.0",
+    "mocha-suppress-logs": "^0.5.1",
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+  }
+}

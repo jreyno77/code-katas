@@ -1,4 +1,4 @@
-name: CI
+name: Leap-Years-1-CI
 on:
   pull_request:
     branches: [ "main" ]
@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Test
-        run: npm i; npm test;
+        run: cd leap-years-1; npm i; npm test; cd ../;
