@@ -15,8 +15,9 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "build": "esbuild ./src/index.ts --bundle --platform=node --format=esm --outfile=./dist/src/index.ts",
-    "pretest": "rm -rf ./dist && esbuild ./src/index.ts --bundle --platform=node --format=esm --outfile=./dist/src/index.ts && esbuild ./test/**/*.ts --platform=node --format=esm --outdir=./dist/test --out-extension:.js=.ts",
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && esbuild ./src/**/*.ts --bundle --platform=node --format=esm --outdir=./dist/src --out-extension:.js=.ts",
+    "pretest": "npm run clean && npm run build && esbuild ./test/**/*.ts --platform=node --format=esm --outdir=./dist/test --out-extension:.js=.ts",
     "test": "mocha --node-option loader=ts-node/esm --require mocha-suppress-logs ./dist/test/**/*.ts"
   },
   "devDependencies": {
@@ -25,9 +26,8 @@
     "esbuild": "^0.27.3",
     "mocha": "^11.1.0",
     "mocha-suppress-logs": "^0.5.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "ts-node": "^10.9.2"
-  },
-  "dependencies": {
+    "zod": "^4.3.6"
   }
 }
