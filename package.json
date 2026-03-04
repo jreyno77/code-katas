@@ -13,8 +13,9 @@
   "license": "ISC",
   "author": "Joshua Reynolds",
   "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm test"
+  "devDependencies": {
+    "mocha": "^11.1.0",
+    "mocha-suppress-logs": "^0.5.1",
+    "ts-node": "^10.9.2"
   }
 }
